@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link href=".../css/style.css" rel="stylesheet" />
-    <title>Contact - F1 Merch Shop</title>
+    <link href="style.css" rel="stylesheet" />
+    <title>F1 Merch Shop - Home</title>
 </head>
 <body>
     <div class="container">
         <div class="section1">
             <p>F1 Merch Shop</p>
             <div class="xlabel">
-                <img src="F1.svg.webp" alt="F1 Logo" />
+                <img src=".../img/F1.svg.webp" alt="F1 Logo" />
             </div>
         </div>
 
-        <div class="section2">
+        <div class="section2" id="teams">
             <p>Teams</p>
             <ul>
                 <li><a href="https://www.mercedesamgf1.com/" target="_blank"><img src="pic2.svg" alt="Mercedes" /></a></li>
@@ -25,25 +25,22 @@
         </div>
 
         <div class="section3">
-            <h2>Contact Us</h2>
-            <p>You can reach our partners directly through this interactive map:</p>
-
-            <img src="f1-teams-map.webp" alt="F1 Teams Map" usemap="#teamsmap" width="500">
-
-            <map name="teamsmap">
-                <area shape="rect" coords="50,50,150,150" href="https://www.mercedesamgf1.com/" alt="Mercedes" target="_blank">
-                <area shape="rect" coords="200,50,300,150" href="https://www.redbullracing.com/int-en" alt="Red Bull" target="_blank">
-            </map>
+            <img src="banner.svg" alt="F1 Banner" />
         </div>
 
-
-        <div class="section4">
-            <h3>Find Us</h3>
-            <p>There's could be a map!</p>
+        <div class="section4" id="offers">
+            <div>
+                <h3>Featured Offers</h3>
+                <ol>
+                    <li>Red Bull Racing Hoodie – 20% off</li>
+                    <li>Mercedes Cap – Buy 1 Get 1 Free</li>
+                    <li>Ferrari Jacket – Limited Edition</li>
+                </ol>
+            </div>
         </div>
 
         <div class="section5">
-            <nav class="site-navigation">
+            <nav class="site-navigation" aria-label="Main menu">
                 <h3>Menu</h3>
                 <ul class="menu">
                     <li><a href="index.html">Home</a></li>
@@ -53,15 +50,18 @@
                 </ul>
             </nav>
         </div>
-
-        <div class="section6">
-            <p>There's could be an add!</p>
+        <div class="section6" id="support">
+            <ul>
+                <li><a href="#teams">Teams</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
         </div>
 
         <div class="section7">
             <p style="color:white; margin:0;">© 2025 F1 Merch Shop</p>
             <div class="ylabel">
-                <h4>“We are always here for fans”</h4>
+                <h4>“Racing starts here!”</h4>
             </div>
         </div>
     </div>
