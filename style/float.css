@@ -12,7 +12,6 @@ body {
 .top {
     background-color: #8B0000;
     padding: 15px 20px;
-    overflow: hidden;
 }
 
 .section1 {
@@ -34,7 +33,6 @@ body {
         height: 50px;
         background-color: white;
         padding: 5px;
-        display: block;
     }
 
 .medium {
