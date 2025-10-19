@@ -9,25 +9,25 @@ body {
     display: grid;
     grid-template-columns: 250px 1fr 250px;
     grid-template-rows: 100px 100px 1fr 50px 100px;
-    grid-template-areas:
-        "header header header"
-        "left-top main right"
-        "left main right"
-        "left bottom right"
+    grid-template-areas: 
+        "header header header" 
+        "left-top main right" 
+        "left main right" 
+        "left bottom right" 
         "footer footer footer";
-    min-height: 100vh; /* Змінено з height: 100% для кращої гнучкості */
+    min-height: 100vh;
     width: 100%;
 }
 
 .section1 {
     grid-area: header;
     background: #620A0A;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 }
 
     .section1 p {
@@ -43,20 +43,23 @@ body {
 }
 
     .xlabel img {
-        height: 50px;
-        width: 180px;
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
     }
 
 .section2 {
     grid-area: left-top;
     background: #FFBF00;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
     border-top: 5px solid #4A2C2A;
     padding: 10px 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-content: center;
 }
 
     .section2 p {
@@ -68,9 +71,11 @@ body {
     .section2 ul {
         list-style: none;
         padding: 0;
-        display: flex;
-        gap: 10px;
         margin: 0;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 10px;
+        align-items: center;
     }
 
     .section2 li {
@@ -82,17 +87,17 @@ body {
             height: 40px;
             object-fit: contain;
             transition: transform 0.2s;
+            display: block;
         }
 
 .section3 {
     grid-area: main;
     background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     padding: 20px;
     overflow-y: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 
     .section3 img {
@@ -102,17 +107,16 @@ body {
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         margin-bottom: 20px;
         display: block;
-        margin: auto;
+        object-fit: cover;
     }
 
 .section4 {
     grid-area: right;
     background: #FFCBEB;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
+    align-content: center;
 }
 
     .section4 h3 {
@@ -120,8 +124,7 @@ body {
         color: #620A0A;
     }
 
-    .section4 ol,
-    .section4 ul {
+    .section4 ol, .section4 ul {
         margin: 10px 0;
         padding-left: 20px;
     }
@@ -133,12 +136,18 @@ body {
 .section5 {
     grid-area: left;
     background: #F5C8E7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     padding: 20px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
 }
+
+    .section5 .site-navigation {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        justify-items: center;
+        width: 100%;
+    }
 
     .section5 h3 {
         margin-top: 0;
@@ -150,10 +159,14 @@ body {
         padding: 0;
         margin: 0;
         width: 100%;
+        display: grid;
+        grid-auto-flow: row;
+        gap: 8px;
+        justify-content: center;
     }
 
         .section5 .menu li {
-            margin: 8px 0;
+            margin: 0;
         }
 
         .section5 .menu a {
@@ -179,17 +192,18 @@ body {
 .section6 {
     grid-area: bottom;
     background: #FFBF00;
-    display: flex;
+    display: grid;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
 }
 
     .section6 ul {
         list-style: none;
-        display: flex;
-        gap: 20px;
         padding: 0;
         margin: 0;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 20px;
     }
 
     .section6 a {
@@ -206,12 +220,12 @@ body {
 .section7 {
     grid-area: footer;
     background: #620A0A;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
     font-size: 16px;
     color: white;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 }
 
 .ylabel {
@@ -222,39 +236,4 @@ body {
     border-radius: 6px;
     color: #620A0A;
     font-style: italic;
-}
-
-
-/* =================================================== */
-/* ============== СТИЛІ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ ============== */
-/* =================================================== */
-
-@media (max-width: 768px) {
-    .container {
-        /* Перетворюємо сітку на одну колонку */
-        grid-template-columns: 1fr;
-        /* Висота рядків автоматична, щоб вміст сам визначав розмір */
-        grid-template-rows: auto;
-        /* Новий порядок блоків для логічного скролінгу */
-        grid-template-areas:
-            "header"
-            "left"      /* Меню одразу під шапкою */
-            "main"
-            "left-top"  /* Блок з командами */
-            "right"     /* Блок з пропозиціями */
-            "bottom"
-            "footer";
-    }
-
-    .section1, .section7 {
-        /* Зменшуємо горизонтальні відступи, щоб дати більше місця контенту */
-        padding: 10px 15px;
-        flex-direction: column; /* Розміщуємо елементи шапки один під одним */
-        gap: 10px; /* Додаємо проміжок між ними */
-        text-align: center;
-    }
-    
-    .section7 {
-        gap: 15px;
-    }
 }
