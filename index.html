@@ -26,6 +26,45 @@
 
         <div class="section3">
             <img src="img/banner.svg" alt="F1 Banner" />
+
+            <hr>
+            <form id="wordCountForm" style="margin-top: 20px;">
+                <fieldset>
+                    <legend>Підрахунок слів</legend>
+                    <label for="textInput">Введіть текст:</label>
+                    <input type="text" id="textInput" name="textInput" size="50">
+                    <button type="button" id="countButton">Порахувати</button>
+                </fieldset>
+            </form>
+
+            <form id="alignForm" style="margin-top: 20px;">
+                <fieldset>
+                    <legend>Вирівнювання (подвійний клік на кнопці)</legend>
+                    <input type="checkbox" id="alignS3" name="alignS3"> <label for="alignS3">Блок 3</label>
+                    <input type="checkbox" id="alignS4" name="alignS4"> <label for="alignS4">Блок 4</label>
+                    <input type="checkbox" id="alignS5" name="alignS5"> <label for="alignS5">Блок 5</label>
+                    <button type="button" id="alignButton">Застосувати вирівнювання</button>
+                </fieldset>
+            </form>
+
+            <div id="editor-controls" style="margin-top: 20px;">
+                <p><b>Редагувати вміст блоків (оберіть зі списку):</b></p>
+                <ol id="blockSelectorList">
+                    <li data-target=".section1" style="cursor: pointer; color: blue;">Редагувати Блок 1 (Header)</li>
+                    <li data-target=".section2" style="cursor: pointer; color: blue;">Редагувати Блок 2 (Teams)</li>
+                    <li data-target=".section3" style="cursor: pointer; color: blue;">Редагувати Блок 3 (Main)</li>
+                    <li data-target=".section4" style="cursor: pointer; color: blue;">Редагувати Блок 4 (Offers)</li>
+                    <li data-target=".section5" style="cursor: pointer; color: blue;">Редагувати Блок 5 (Menu)</li>
+                    <li data-target=".section6" style="cursor: pointer; color: blue;">Редагувати Блок 6 (Support)</li>
+                    <li data-target=".section7" style="cursor: pointer; color: blue;">Редагувати Блок 7 (Footer)</li>
+                </ol>
+
+                <form id="editorForm" style="display: none; margin-top: 10px;">
+                    <textarea id="editorTextarea" rows="15" style="width: 90%;"></textarea><br>
+                    <button type="button" id="saveContentButton">Зберегти вміст</button>
+                </form>
+            </div>
+
         </div>
 
         <div class="section4" id="offers">
@@ -45,7 +84,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="merch.html">Merch</a></li>
-                    <li><a href="contact.html">Contact</a></li>           
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="smartphone.html">Smartphone (Grid)</a></li>
                     <li><a href="smartphone-flex.html">Smartphone (Flex)</a></li>
                 </ul>
@@ -66,5 +105,6 @@
             </div>
         </div>
     </div>
+    <script src="script/Script.js"></script>
 </body>
 </html>
